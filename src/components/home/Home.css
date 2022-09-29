@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap');
 
 .titulo {
     font-size: 30px;
@@ -19,21 +19,21 @@
     display: block;
     margin: 0 auto;
     margin-left: 5vw;
-}
+} */
 
-body {
+/* body {
     background-image: url(./imgs/cool-background.png);
     background-size: 100%;
-}
+} */
 
 /* .fotoD {
     float: right;
 } */
 
-.config {
+/* .config {
     display: flex;
     justify-content: center;
     margin: 0 auto;
     width: 70vw;
     align-items: center;
-}
+} */
