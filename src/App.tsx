@@ -1,17 +1,26 @@
 import React from 'react';
 import './App.css';
 import Home from './components/home/Home';
-import {Grid} from '@material-ui/core';
 import Navbar from './components/estaticos/navbar/Navbar';
 import Footer from './components/estaticos/footer/Footer';
+import Login from './components/login/Login'
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 function App() {
-  return (
-  <>
+  return(
+    <BrowserRouter>
     <Navbar />
-    <Home />
+    <div style={{ minHeight: '100vh' }}>
+    <Routes> 
+    <Route path="/" element={<Login />} />
+    <Route path="/login" element={<Login />} />
+    <Route path="/home" element={<Home />} />
+    {/* <Route path="/cadastro" element={<CadastroUsuario />} /> */}
+    </Routes>
+    </div>
     <Footer />
-  </>
+    </ BrowserRouter >
+    
   );
 }
 

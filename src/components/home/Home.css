@@ -1,39 +1,22 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap'); */
 
-.titulo {
-    font-size: 30px;
-    text-align: center;
-    color: black;
-    font-family: 'Abyssinica SIL', serif;
+.caixa{
+    background-image: linear-gradient(#000000, #3F51B5);
 }
 
-.pConfig {
-    font-family: 'Abyssinica SIL', serif;
+.titulo{
+    color: white !important;
+    font-weight: bold !important;
     text-align: center;
-    justify-content: center;
 }
 
-.img {
-    width: 400px;
-    height: 400px;
-    display: block;
-    margin: 0 auto;
-    margin-left: 5vw;
-} */
+.botao{
+    border-color: white !important;
+    background-color: transparent;
+    color: white !important;
+}
 
-/* body {
-    background-image: url(./imgs/cool-background.png);
-    background-size: 100%;
-} */
+.postagens{
+    background-color: white;
+}
 
-/* .fotoD {
-    float: right;
-} */
-
-/* .config {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    width: 70vw;
-    align-items: center;
-} */
