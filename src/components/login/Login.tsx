@@ -3,14 +3,14 @@ import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Services';
-import UsuarioLogin from '../../models/UserLogin';
+import UserLogin from '../../models/UserLogin';
 import './Login.css';
 
 function Login() {
 
     let navigate = useNavigate();
     const [token, setToken] = useLocalStorage('token');
-    const [userLogin, setUserLogin] = useState<UsuarioLogin>({
+    const [userLogin, setUserLogin] = useState<UserLogin>({
         id: 0,
         nome: '',
         usuario: '',
