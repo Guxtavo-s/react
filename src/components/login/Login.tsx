@@ -3,7 +3,7 @@ import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Services';
-import UsuarioLogin from '../../models/UsuarioLogin';
+import UsuarioLogin from '../../models/UserLogin';
 import './Login.css';
 
 function Login() {
