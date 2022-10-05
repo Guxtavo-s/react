@@ -2,7 +2,7 @@ import React, {ChangeEvent, useState, useEffect} from 'react';
 import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-import { login } from '../../services/Services';
+import { api, login } from '../../services/Services';
 import UserLogin from '../../models/UserLogin';
 import './Login.css';
 
@@ -27,7 +27,7 @@ function Login() {
     }
 
         useEffect(()=>{
-            if(token != ''){
+            if(token !== ''){
                 navigate('/home')
             }
         }, [token]);

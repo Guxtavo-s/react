@@ -49,12 +49,18 @@ function CadastroUsuario() {
     }
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if(confirmarSenha == user.senha){
-        cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-        alert('Usuario cadastrado com sucesso')
-        }else{
-            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
-        }
+        if(confirmarSenha === user.senha && user.senha.length >= 8 ){
+            try {
+                await cadastroUsuario('usuarios/cadastrar', user, setUserResult);
+                alert('Usuário criado com sucesso. Efetue seu login, por favor.');
+            } catch (error) {
+                alert('Falha ao cadastrar o usuário. Por favor, confira os campos');
+            }
+            } else {
+            alert(
+                'Senhas divergentes, ou menores que 8 caracteres. Por favor, verifique os campos.'
+            );
+            }
     }
 
     return (
@@ -64,10 +70,11 @@ function CadastroUsuario() {
                 <Box paddingX={10}>
                     <form onSubmit={onSubmit}>
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar</Typography>
-                        <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth style={{backgroundColor:'#eeeeee', borderRadius: '15px'}}/>
-                        <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal'fullWidth style={{backgroundColor:'#eeeeee', borderRadius: '15px'}}/>
-                        <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth style={{backgroundColor:'#eeeeee', borderRadius: '15px'}}/>
-                        <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmarSenha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth style={{backgroundColor:'#eeeeee', borderRadius: '15px'}}/>
+                        <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth style={{backgroundColor:'#eeeeee', borderRadius: '15px'}} required/>
+                        <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal'fullWidth style={{backgroundColor:'#eeeeee', borderRadius: '15px'}} required/>
+                        <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' label='foto (url)' variant='outlined' name='foto' margin='normal' fullWidth style={{backgroundColor:'#eeeeee', borderRadius: '15px'}} required/> 
+                        <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth style={{backgroundColor:'#eeeeee', borderRadius: '15px'}} required/>
+                        <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmarSenha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth style={{backgroundColor:'#eeeeee', borderRadius: '15px'}} required/>
                         <Box marginTop={2} textAlign='center'>
                             <Link to='/login' className='text-decorator-none'>
                                 <Button variant='outlined' color='primary' className='btnCancelar' style={{backgroundColor: 'transparent', borderColor: 'white', color:'white'}}>
