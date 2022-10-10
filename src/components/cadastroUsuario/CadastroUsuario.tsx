@@ -63,6 +63,12 @@ function CadastroUsuario() {
             }
     }
 
+    useEffect(() => {
+        if (userResult.id !== 0) {
+        navigate('/login');
+        }
+    }, [userResult]);
+
     return (
         <Grid container className='grid2'>
             <Grid item xs={6} className='imagem2'></Grid>

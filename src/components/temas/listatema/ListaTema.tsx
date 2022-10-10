@@ -20,7 +20,7 @@ function ListaTema() {
     }, [token])
 
     async function getTema(){
-        await getAll('/tema', setTemas, {
+        await getAll('/temas', setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -33,8 +33,7 @@ function ListaTema() {
 
 return (
     <>
-    {
-        temas.map(tema =>(
+    {temas.map(tema =>(
     <Box m={2} >
         <Card variant="outlined">
         <CardContent>

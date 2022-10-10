@@ -33,8 +33,7 @@ function ListaPostagem() {
 
     return (
         <>
-        {
-        posts.map(post => (
+        {posts.map(post => (
             <Box m={2} >
                 <Card variant="outlined">
                     <CardContent>

@@ -48,7 +48,7 @@ function CadastroPost() {
     }, [id])
 
     async function getTemas() {
-        await getAll("/tema", setTemas, {
+        await getAll("/temas", setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -111,7 +111,7 @@ function CadastroPost() {
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
-                        onChange={(e) => getId(`/tema/${e.target.value}`, setTema, {
+                        onChange={(e) => getId(`/temas/${e.target.value}`, setTema, {
                             headers: {
                                 'Authorization': token
                             }
